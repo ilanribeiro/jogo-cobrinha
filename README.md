@@ -1,4 +1,4 @@
-# <img src="images/snake.png" alt="logo-da-cobrinha" style="zoom: 25%;" />Cobra Kikái
+# <img src="images/snake.png" alt="logo-da-cobrinha" width="100px" />Cobra Kikái
 
 #### Também conhecido como jogo da cobrinha.
 
