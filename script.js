@@ -1,6 +1,7 @@
 let canvas = document.querySelector("#snake");
 let context = canvas.getContext("2d");
 let box = 32;
+let points = 0;
 let snake = [];
 snake[0] = {
   x: 8 * box,
@@ -43,6 +44,13 @@ function startGame() {
   if(snake[0].x < 0 && direction === 'left') snake[0].x = 16 * box;
   if(snake[0].y > 15 * box && direction === 'down') snake[0].y = 0;
   if(snake[0].y < 0 && direction === 'up') snake[0].y = 16 * box;
+
+  for(let index = 1; index < snake.length; index++) {
+    if(snake[0].x === snake[index].x && snake[0].y === snake[index].y) {
+      clearInterval(game);
+      alert(`Fim de Jogo. você fez ${points} pontos`);
+    }
+  }
   
   buildBG();
   buildSnake();
@@ -61,6 +69,7 @@ function startGame() {
   } else {
     food.x = Math.floor(Math.random() * 16) * box;
     food.y = Math.floor(Math.random() * 16) * box;
+    points += 10;
   }
   
 
